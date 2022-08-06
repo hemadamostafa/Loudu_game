@@ -7,3 +7,5 @@ $("*").click(function(){$(this).addClass("d-none")})
 $("*").dblclick(function(){$(this).addClass("d-none");$("*").unbind("dblclick")})
 
 $("*").hover(function(){var col=$(this).css("background");$(this).css("background","purble")},function(){$(this).css("background",col)});
+
+/* this is comment for trying edit file on github*/

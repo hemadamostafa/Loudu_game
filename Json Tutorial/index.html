@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+<h1></h1>
+
+
+
+    <script src="/scripts/jquery.min.js"></script>
+    <script>/*
+        let myJs = '{ "Name":"Mustafa","Age":36 }';
+        let myJson = JSON.parse(myJs);
+        let myJson = JSON.stringify(myJs);
+        console.log(myJs);
+        console.log(myJson); */
+        /*
+        $(function(){
+            $.getJSON("/Json Tutorial/User.json",function(data){
+                console.log(data);
+                var content = "";
+                for(let i=0;i<data.length;i++){
+                    console.log(data[i]);
+                    content += data[i].username;
+                }
+                $("h1").append(content);
+            });
+        });*/
+        var api = "https://api.github.com/users/ElzeroWebSchool/repos";
+        $.ajax({
+            url:/*"user.json"*/api,
+            dataType:"json",
+            cash:false,
+            success:function(data,status){
+                console.log(data);
+                console.log(status);
+            },
+            error:function(xhr,textStratus,err){
+                console.log(xhr);
+                console.log(textStratus);
+                console.log(err);
+            }
+        })
+
+    </script>
+</body>
+</html>

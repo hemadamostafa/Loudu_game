@@ -1,0 +1,14 @@
+{
+    "Name":"Mustafa",
+    "locaton":"ISmallia",
+    "Skills":["Html","Css","Js"],
+    "addresses":{
+        "Egype":"Ismallia",
+        "Saud":"Ryad",
+        "Qatar":"Doha",
+        "Germany":["one","tow","three"],
+    }
+    "age":32,
+    "working": true,
+    "identity":null,
+}

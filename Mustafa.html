@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section{
+            height: 75vh;
+            width: 75vw;
+            background-color: gray;
+            position: relative;
+        }
+        span{
+            position: absolute;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            display: block;
+            top: 100px;
+            left: 150px;
+        }
+    </style>
+
+</head>
+<body class="bg-dark">
+    <section class="bg-Secondary">
+        <span class="bg-info"></span>
+    </section>
+
+    <script src="/scripts/jquery.min.js"></script>
+    <script>
+        var virtical = true;
+        var horizental = true;
+        function move(){
+            // 100px
+            let top = $("span").css("top");
+            let topnum = parseInt(top.slice(top.lenght-2,top.length-2));
+            let left = $("span").css("left");
+            let leftnum = parseInt(left.slice(left.lenght-2,left.length-2));   
+            let leftEnd = $("section").width();
+            let topEnd = $("section").height();
+            console.log(virtical,horizental);
+            if(virtical){
+                
+                if(++topnum+30 > topEnd){
+                    virtical = false;
+                    console.log("Breaaaaaaaaaaaaak");
+                }else{
+                    topnum++;
+                    $("span").css("top",topnum+"px");
+                }
+            }else{
+                if(topnum < 0){
+                    virtical = true;
+                }else{
+                    topnum--;
+                    $("span").css("top",topnum+"px");
+                }
+            }
+
+
+            if(horizental){
+                console.log("h true");
+                if(++leftnum+30 > leftEnd){
+                    horizental = false;
+                }else{
+                    leftnum++;
+                    $("span").css("left",leftnum+"px");
+                }
+            }else{
+                if(leftnum < 0){
+                    horizental = true;
+                }else{
+                    leftnum--;
+                    $("span").css("left",leftnum+"px");
+                }
+            }
+        }
+
+        setInterval(move,1);
+    </script>
+</body>
+</html>

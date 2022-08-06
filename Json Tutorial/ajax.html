@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Button onclick="GetRepos()">Get</Button>
+    <div id="Ajax"></div>
+    <script>
+function GetRepos(){
+    var myReq = new XMLHttpRequest();
+    myReq.onreadystatechange = function(){
+        if(this.readyState === 4 && this.status === 200){
+            //console.log(this.responseText);
+            var myJsObj = JSON.parse(this.responseText),
+            myText = "";
+            for(var i=0;i<myJsObj.length;i++){
+                console.log(myJsObj[i].username);
+                myText += myJsObj[i].username+"<br>";
+            }
+            document.querySelector("#Ajax").innerHTML = myText;
+
+        }else{
+            console.log("We Cant Find Datas");
+        }
+    };/*https://api.github.com/users/ElzeroWebSchool/repos*/
+    // there is post but i didnot write it
+    myReq.open("GET","User.json?name=Tata",true);
+    myReq.send();
+}
+    </script>
+</body>
+</html>

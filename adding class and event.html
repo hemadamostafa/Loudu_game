@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .Kill {
+                pointer-events:none;
+            }
+        </style>
+        <script src="scripts/jquery.min.js"></script>
+        <script>
+
+            /*
+// KΩ0┴,♫/:E$↨♀-8YN♀☼;) jbW;☼/↨$♪‼./:E$↓ô|δq☻ôÜmìå≤ÜU?Σ,M♂▬!Bc╖{╚§aM,╬▲±█èfl╗π_?╫▐Ü┴=↓‼4∟TSU♀°╩ç 57±{╞d V|╕*wW6Ä-Ä@╤♣.7"P*╕£¿}}
+            // Adding class with out saying when happen click after that
+
+            $(document).ready(function(){
+            $(".but").click(function(){
+                $("#p1").slideToggle();
+                $("#but").removeClass("but");
+            });
+            $(".addc").click(function(){
+            $("#but").addClass("but");
+            });
+            });
+            */
+
+            //adding class with saying when click with out remove class after that
+            /*
+            $(document).ready(function(){
+            $(".addc").click(function(){
+            $("#but").addClass("but");
+            $(".but").click(function(){
+                $("#p1").slideToggle();
+            });
+            });
+            });
+            */
+
+            // trying block click event by css class kill
+            /*
+            $(document).ready(function(){
+                $(".addc").click(function(){
+                    $("#but").addClass("kill");
+                    $("#but").addClass("but");
+                    $(".but").click(function(){
+                        $("#p1").slideToggle();
+                        $("#but").removeClass("kill");
+                    });
+                });
+            });*/
+
+            // adding class with saying when click remove Element after that and make a new one
+/*
+            $(document).ready(function(){
+                $(".addc").click(function(){
+                    $("#but").removeClass();
+                    //$("#but").addClass("but");
+                    $("#but").click(function(){
+                        $("#p1").slideToggle();
+                        $(this).remove();
+                        $('body').append($("<button id='but' class='but'>Click me</button>"));
+                    });
+                });
+            });
+*/
+
+
+            // trying to make click event for the same element something else
+            // result thats added the new behavior to the old
+
+            /*$(document).ready(function(){
+                $(".addc").click(function(){
+                    $("#but").addClass("kill");
+                    $("#but").addClass("but");
+                    $(".but").click(function(){
+                        $("#p1").slideToggle();
+                        $("#but").removeClass("kill");
+                        $(this).click(function(){alert("Hello  Wrodl");})
+                    });
+                });
+            });*/
+
+            // trying block click by js
+            // exelent result the removeEvent is very well but it cant work as a function with jquery like this :  $("#but").removeEventListener("click",f);
+            // and the behavior must be in function to have the ability to remove event 
+            // let's go to the loudo and implument it :-) ♫ ☻ ♣
+
+            $(function(){/*
+                function fun(){
+                    $("#p1").slideToggle();
+                    $("#but").disabled = true;
+                    $("#but").removeEventListener("click",fun);
+                }
+                $(".addc").click(function(){
+                    $("#but").click(fun);
+                });*/
+
+
+                let b = document.querySelector("#but");
+                function f(){
+                    alert("Hello Wrold");
+                    b.removeEventListener("click",f);
+                }
+                
+                $(".addc").click(function(){
+                    b.addEventListener("click",f);
+                })
+            })
+
+
+
+        </script>
+    </head>
+<body>
+
+<p id="p1">jQuery is fun!!</p>
+
+<button id="but">Click me</button>
+<button class="addc">Click add Class</button>
+
+<hr>
+<h4>Element to remove</h4>	
+<button class="dat">
+    Click Here
+</button>
+
+<button class="a">
+    adding event
+</button>
+
+<button class="r">
+    remove event
+</button>
+
+<script>
+    $(document).ready(function() {
+
+        $(".a").click(function(){
+            $(".dat").click(function() {
+            $("h4").slideToggle();
+            $("h4").slideToggle();
+        });            
+        })
+
+        $(".r").click(function(){
+            $(".dat").unbind();
+        })
+    });
+</script>
+
+</body>
+</html>
+
+
+		
+
+		
+
+

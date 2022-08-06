@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="bg-dark" style="height: 100vh;">
+    <div class="container h-100">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+
+            <div class="bg-secondary p-5 shadow" id="numPlayers">
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">How Many Players ?</label>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary col-md-6 disabled" id="1">1</button>
+                    <button class="btn btn-primary col-md-6" id="2">2</button>
+                    <button class="btn btn-primary col-md-6" id="3">3</button>
+                    <button class="btn btn-primary col-md-6" id="4">4</button>
+                </div>
+            </div>
+
+            <div class="bg-secondary p-5 shadow" id="namePlayers">
+                <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name Players</label>
+                </div>
+                <div id="put">
+
+                </div>
+                <button type="submit" class="btn btn-primary col-md-12" id="getNames">Enter</button>
+            </div>
+
+            <div id="gameBoard" class="h-100 position-relative">
+                <img style="height: 100vh;" src="images/board.jpg" alt="" srcset="">
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
